@@ -1,0 +1,1477 @@
+nohup: 忽略输入
+****************************************************************************************************************
+*** Running CAW-N method ***
+dataset: enron
+n_runs: 5
+prefix: CAW
+Start Time: 2023-08-31 22:33:14
+****************************************************************************************************************
+INFO:root:Create log file at log/2023_08_31_22_33_16-enron-t-walk-1-32-172.log
+INFO:root:Command line executed: python main.py -d enron --bs 32 --n_degree 32 --n_layer 1 --mode t --bias 1e-6 --pos_enc lp --pos_dim 172 --walk_pool attn --seed 123 --n_runs 5 --gpu 0 --prefix CAW
+INFO:root:Full args parsed:
+INFO:root:Namespace(data='enron', mode='t', n_degree=['32'], n_layer=1, bias=1e-06, agg='walk', pos_enc='lp', pos_dim=172, pos_sample='binary', walk_pool='attn', walk_n_head=2, walk_mutual=False, walk_linear_out=False, attn_agg_method='attn', attn_mode='prod', attn_n_head=2, time='time', n_epoch=50, bs=32, lr=0.0001, drop_out=0.1, tolerance=0.001, seed=123, ngh_cache=False, gpu=0, cpu_cores=1, verbosity=1, val_ratio=0.15, test_ratio=0.15, n_runs=5, neg_sample='rnd', tr_var='standard', CL=False, pacing='linear', prefix='CAW')
+INFO:root:Create checkpoint directory ./saved_checkpoints/2023_08_31_22_33_16-enron-t-walk-1-32-172/
+INFO:root:Transductive training...
+INFO:root:************************************
+INFO:root:********** Run 0 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.07773571568316344
+INFO:root:train acc: 0.9877908302919708, val acc: 0.6851408825093036
+INFO:root:train auc: 0.9986128535583941, val auc: 0.939462165514797
+INFO:root:train ap: 0.9985182672804552, val ap: 0.9560249810727449
+DEBUG:matplotlib.pyplot:Loaded backend agg version v2.2.
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.17349389899193304
+INFO:root:train acc: 0.9843236770072993, val acc: 0.5043593833067518
+INFO:root:train auc: 0.9957457159557481, val auc: 0.9173879142300194
+INFO:root:train ap: 0.9953339607215149, val ap: 0.9033910335410446
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.03218136641757102
+INFO:root:train acc: 0.9965328467153285, val acc: 0.5140350877192982
+INFO:root:train auc: 0.9997619183394161, val auc: 0.9576324650008861
+INFO:root:train ap: 0.9997692859056571, val ap: 0.9677231354111875
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.024141526839758398
+INFO:root:train acc: 0.9964587135036497, val acc: 0.5159223817118554
+INFO:root:train auc: 0.9999878820711678, val auc: 0.9085840864788233
+INFO:root:train ap: 0.9999898899998618, val ap: 0.9125079191516434
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.011065972892842295
+INFO:root:train acc: 0.9997034671532846, val acc: 0.5505316321105794
+INFO:root:train auc: 0.9999657846715329, val auc: 0.9046774765195817
+INFO:root:train ap: 0.9999423741836343, val ap: 0.9004725945587922
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.04800814303589178
+INFO:root:train acc: 0.9905337591240876, val acc: 0.5702551834130781
+INFO:root:train auc: 0.9954290459625912, val auc: 0.882961190855928
+INFO:root:train ap: 0.9953910451151685, val ap: 0.9016635926695041
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 2
+INFO:root:Loaded the best model at epoch 2 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5014088250930356
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9233510544036858
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9433366148582902
+INFO:root:Test statistics: t all nodes -- ap: 0.9433366148582902
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9233510544036858
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0602444410324097
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9388357256778307
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9868047702345387
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8972886762360447
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9100351995754582
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9423253606263152
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9993815422058105
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9095959595959595
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9156337484925695
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8821371610845296
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.8974564160324049
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5014088250930356
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.5016025077518822
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.99585326953748
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6665668785316616
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 0, elapsed time: 4621.777828216553 seconds.
+INFO:root:************************************
+INFO:root:********** Run 1 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.06099646997469685
+INFO:root:train acc: 0.9890567974452554, val acc: 0.568261562998405
+INFO:root:train auc: 0.9972741788321168, val auc: 0.9311749069643807
+INFO:root:train ap: 0.9971873267864266, val ap: 0.9300271388006949
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.0347965483553072
+INFO:root:train acc: 0.9944571167883212, val acc: 0.4984582668793195
+INFO:root:train auc: 0.9999579436587591, val auc: 0.9455768208399787
+INFO:root:train ap: 0.9999688172376031, val ap: 0.9606251561814286
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.011069747123713943
+INFO:root:train acc: 0.9982721259124088, val acc: 0.527511961722488
+INFO:root:train auc: 1.0, val auc: 0.9456459330143542
+INFO:root:train ap: 1.0, val ap: 0.9579939968983702
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.037624020345688826
+INFO:root:train acc: 0.9958713503649635, val acc: 0.5060871876661351
+INFO:root:train auc: 0.9999340642107665, val auc: 0.948324472798157
+INFO:root:train ap: 0.9999289555929521, val ap: 0.9634198626588576
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.026739465782823702
+INFO:root:train acc: 0.9969206204379562, val acc: 0.6542264752791069
+INFO:root:train auc: 0.9999932282162409, val auc: 0.9347439305334042
+INFO:root:train ap: 0.9999936305078263, val ap: 0.9503382840322747
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.018420458958633416
+INFO:root:train acc: 0.9979356751824817, val acc: 0.5367889420520999
+INFO:root:train auc: 1.0, val auc: 0.9486531986531989
+INFO:root:train ap: 1.0, val ap: 0.9632557407127526
+INFO:root:start 6 epoch
+INFO:root:epoch: 6:
+INFO:root:epoch mean loss: 0.015776679755320933
+INFO:root:train acc: 0.9982721259124088, val acc: 0.555156831472621
+INFO:root:train auc: 0.9999975051322992, val auc: 0.9501621477937268
+INFO:root:train ap: 0.9999972934697813, val ap: 0.9622471448792188
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 3
+INFO:root:Loaded the best model at epoch 3 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.49774056353003726
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9373356370724791
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9557688739724637
+INFO:root:Test statistics: t all nodes -- ap: 0.9557688739724637
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9373356370724791
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0538382530212402
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9367091972355129
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9941718294910641
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8829080276448699
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9086952149383164
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9550122958206485
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9992554783821106
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9088516746411481
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9343538962281548
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8752791068580541
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.902603622865667
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.49774056353003726
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.49742413270781743
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9905369484316852
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6619549344186433
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 1, elapsed time: 5578.781871318817 seconds.
+INFO:root:************************************
+INFO:root:********** Run 2 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.06817619466039543
+INFO:root:train acc: 0.98804174270073, val acc: 0.5412546517809675
+INFO:root:train auc: 0.998546561359489, val auc: 0.9442211589580011
+INFO:root:train ap: 0.9985317673643387, val ap: 0.9585521046773894
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.02714444659136341
+INFO:root:train acc: 0.9968521897810219, val acc: 0.505077086656034
+INFO:root:train auc: 0.9999354898494526, val auc: 0.9289128123338649
+INFO:root:train ap: 0.9999475481382674, val ap: 0.9457398348667478
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.027081200356705474
+INFO:root:train acc: 0.996276611922141, val acc: 0.5973950026581606
+INFO:root:train auc: 1.0, val auc: 0.9305998582314371
+INFO:root:train ap: 1.0, val ap: 0.9315340036621725
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.010637831901801382
+INFO:root:train acc: 0.9984717153284671, val acc: 0.503056884635832
+INFO:root:train auc: 1.0, val auc: 0.9409711146553251
+INFO:root:train ap: 1.0, val ap: 0.9559719158492694
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 0
+INFO:root:Loaded the best model at epoch 0 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5137958532695375
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9396827928406875
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9521634217290663
+INFO:root:Test statistics: t all nodes -- ap: 0.9521634217290663
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9396827928406875
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0400655269622803
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9449362041467303
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9813853004553946
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.9140085061137692
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9253386574868206
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9512354764897634
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9960229992866516
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9217570441254651
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9290088454834428
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.9003455608718767
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9113965255135146
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5137958532695375
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.5098388561077535
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9804359383306752
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6678891542752746
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 2, elapsed time: 3127.220081806183 seconds.
+INFO:root:************************************
+INFO:root:********** Run 3 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.05837601227163277
+INFO:root:train acc: 0.9904026003649635, val acc: 0.5247474747474749
+INFO:root:train auc: 0.9980622006158759, val auc: 0.9519927343611553
+INFO:root:train ap: 0.9980795402455493, val ap: 0.9654458297400472
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.0465211389136186
+INFO:root:train acc: 0.9947935675182482, val acc: 0.5083997873471557
+INFO:root:train auc: 0.9999272924270073, val auc: 0.8975855041644516
+INFO:root:train ap: 0.9999435768450009, val ap: 0.9010900446764191
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.018268830179251554
+INFO:root:train acc: 0.9974965784671533, val acc: 0.5140350877192983
+INFO:root:train auc: 0.9998659899635036, val auc: 0.9451701222753854
+INFO:root:train ap: 0.9998838418833895, val ap: 0.9541991215162162
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.023990437102261952
+INFO:root:train acc: 0.996897810218978, val acc: 0.5552897395002657
+INFO:root:train auc: 0.9999996435903284, val auc: 0.9371690590111643
+INFO:root:train ap: 0.9999996543906216, val ap: 0.9525966130831143
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 0
+INFO:root:Loaded the best model at epoch 0 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5007974481658692
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9300265816055292
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9454603695105879
+INFO:root:Test statistics: t all nodes -- ap: 0.9454603695105879
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9300265816055292
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0518254041671753
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.940151515151515
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9819453093110428
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.90311004784689
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9148232894998346
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9443529845031158
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9988610744476318
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9108851674641149
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9167882547884488
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8829611908559275
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.8952554261905232
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5007974481658692
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.4997712096507728
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9886230728335992
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6630935743844363
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 3, elapsed time: 3228.495310306549 seconds.
+INFO:root:************************************
+INFO:root:********** Run 4 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.048817597017503
+INFO:root:train acc: 0.9911952554744525, val acc: 0.5364965443912812
+INFO:root:train auc: 0.9986556227189781, val auc: 0.938491050859472
+INFO:root:train ap: 0.9986495658042793, val ap: 0.9537062183403233
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.044174778047489115
+INFO:root:train acc: 0.9937728102189781, val acc: 0.49609250398724075
+INFO:root:train auc: 0.9992283730611314, val auc: 0.9367933723196883
+INFO:root:train ap: 0.999226997924247, val ap: 0.9546455165145555
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.012306345335764655
+INFO:root:train acc: 0.9976391423357664, val acc: 0.5029239766081872
+INFO:root:train auc: 1.0, val auc: 0.9412041467304625
+INFO:root:train ap: 1.0, val ap: 0.9568934453418323
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.021995509431816454
+INFO:root:train acc: 0.9961735857664233, val acc: 0.506140350877193
+INFO:root:train auc: 0.9999857436131386, val auc: 0.9435982633351053
+INFO:root:train ap: 0.9999806287621834, val ap: 0.9587232465117534
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.04247185854820755
+INFO:root:train acc: 0.9934648722627737, val acc: 0.5164274322169058
+INFO:root:train auc: 0.9960101719320256, val auc: 0.9204669502037922
+INFO:root:train ap: 0.9961645639873746, val ap: 0.9380358735094432
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.01714027378338106
+INFO:root:train acc: 0.9973140967153284, val acc: 0.5524455077086656
+INFO:root:train auc: 0.999825359260949, val auc: 0.9408647882332093
+INFO:root:train ap: 0.9998443102821357, val ap: 0.9564204686996789
+INFO:root:start 6 epoch
+INFO:root:epoch: 6:
+INFO:root:epoch mean loss: 0.004352832343255485
+INFO:root:train acc: 0.9993099908759124, val acc: 0.526501860712387
+INFO:root:train auc: 1.0, val auc: 0.8220512138933193
+INFO:root:train ap: 1.0, val ap: 0.8262946514968316
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 3
+INFO:root:Loaded the best model at epoch 3 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5008506113769271
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9186115541378699
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9406431446055646
+INFO:root:Test statistics: t all nodes -- ap: 0.9406431446055646
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9186115541378699
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.063644289970398
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9399388623072834
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9894573618177994
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8948697501329079
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9075123873996026
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9397106176333235
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9998250007629395
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.902618288144604
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9103304700150234
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8823232323232322
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.8946046116545489
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5008506113769271
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.5008302706738664
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9989367357788409
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6669710334545274
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 4, elapsed time: 5193.16362452507 seconds.
+prefix: CAW_cl_linear
+INFO:root:Create log file at log/2023_09_01_04_35_51-enron-t-walk-1-32-172.log
+INFO:root:Command line executed: python main.py -d enron --bs 32 --n_degree 32 --n_layer 1 --mode t --bias 1e-6 --pos_enc lp --pos_dim 172 --walk_pool attn --seed 123 --n_runs 5 --gpu 0 --prefix CAW_cl_linear --CL --pacing linear
+INFO:root:Full args parsed:
+INFO:root:Namespace(data='enron', mode='t', n_degree=['32'], n_layer=1, bias=1e-06, agg='walk', pos_enc='lp', pos_dim=172, pos_sample='binary', walk_pool='attn', walk_n_head=2, walk_mutual=False, walk_linear_out=False, attn_agg_method='attn', attn_mode='prod', attn_n_head=2, time='time', n_epoch=50, bs=32, lr=0.0001, drop_out=0.1, tolerance=0.001, seed=123, ngh_cache=False, gpu=0, cpu_cores=1, verbosity=1, val_ratio=0.15, test_ratio=0.15, n_runs=5, neg_sample='rnd', tr_var='standard', CL=True, pacing='linear', prefix='CAW_cl_linear')
+INFO:root:Create checkpoint directory ./saved_checkpoints/2023_09_01_04_35_51-enron-t-walk-1-32-172/
+INFO:root:Transductive training...
+INFO:root:USING CURRICULUM LEARNING!!!
+INFO:root:************************************
+INFO:root:********** Run 0 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.05265575811276989
+INFO:root:train acc: 0.9910013686131387, val acc: 0.5496012759170653
+INFO:root:train auc: 0.9985257113937044, val auc: 0.9432961190855929
+INFO:root:train ap: 0.9985542944287288, val ap: 0.9588426794615358
+DEBUG:matplotlib.pyplot:Loaded backend agg version v2.2.
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.023081256434543073
+INFO:root:train acc: 0.9969377281021898, val acc: 0.5202286018075492
+INFO:root:train auc: 0.9999960794936131, val auc: 0.9432828282828282
+INFO:root:train ap: 0.9999962473046184, val ap: 0.9580205207358438
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.020402626199483194
+INFO:root:train acc: 0.9964587135036497, val acc: 0.5851674641148324
+INFO:root:train auc: 0.9999597257071168, val auc: 0.9539358497253234
+INFO:root:train ap: 0.9999732808711989, val ap: 0.9657440097219863
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.020799053230196506
+INFO:root:train acc: 0.9973483120437956, val acc: 0.5073896863370547
+INFO:root:train auc: 0.9997922131614964, val auc: 0.9472984228247384
+INFO:root:train ap: 0.9998349564009985, val ap: 0.9620167704504132
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.01538398228093315
+INFO:root:train acc: 0.9976676551094891, val acc: 0.7107123870281765
+INFO:root:train auc: 0.9999982179516423, val auc: 0.9498927875243665
+INFO:root:train ap: 0.9999983312004297, val ap: 0.9637109381148596
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.02159286743426635
+INFO:root:train acc: 0.9972570711678832, val acc: 0.5227272727272727
+INFO:root:train auc: 0.9999882384808394, val auc: 0.9430241006556795
+INFO:root:train ap: 0.9999917181760017, val ap: 0.9596873891515193
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 2
+INFO:root:Loaded the best model at epoch 2 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5335725677830941
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9352826510721247
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9522488631014887
+INFO:root:Test statistics: t all nodes -- ap: 0.9522488631014887
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9352826510721247
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0566531419754028
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.944736842105263
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9941356992198552
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8964380648591174
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9116703555937294
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9517094531357678
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9919501543045044
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9156034024455076
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.929919030649042
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8901648059542798
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9053938935863582
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5335725677830941
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.525266513725628
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9729930887825624
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6765491610357243
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 0, elapsed time: 4757.792147874832 seconds.
+INFO:root:************************************
+INFO:root:********** Run 1 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.05117920299896143
+INFO:root:train acc: 0.9912480991484185, val acc: 0.5029771398192451
+INFO:root:train auc: 0.9983551107562854, val auc: 0.9050505050505051
+INFO:root:train ap: 0.9982367261493652, val ap: 0.9155955653162529
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.05039535196865127
+INFO:root:train acc: 0.9931512317518248, val acc: 0.6428229665071771
+INFO:root:train auc: 0.999994653854927, val auc: 0.9433351054403686
+INFO:root:train ap: 0.9999956048978774, val ap: 0.958906586603628
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.07700327810351412
+INFO:root:train acc: 0.9883382755474452, val acc: 0.6844763423710792
+INFO:root:train auc: 0.999973269274635, val auc: 0.9485548467127415
+INFO:root:train ap: 0.9999785811050336, val ap: 0.9621348412750037
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.08591464299374542
+INFO:root:train acc: 0.984375, val acc: 0.8219032429558746
+INFO:root:train auc: 0.9999447565009124, val auc: 0.9416843877370193
+INFO:root:train ap: 0.9999488347871612, val ap: 0.9582911723743239
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.12935417517794684
+INFO:root:train acc: 0.9770985401459854, val acc: 0.8271132376395535
+INFO:root:train auc: 0.9986538406706205, val auc: 0.9464203437887648
+INFO:root:train ap: 0.9988400924945454, val ap: 0.9624076083943338
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.10895379006976529
+INFO:root:train acc: 0.9815921532846715, val acc: 0.8150717703349283
+INFO:root:train auc: 0.997998046875, val auc: 0.9597306397306399
+INFO:root:train ap: 0.9984028912208652, val ap: 0.9686004087853479
+INFO:root:start 6 epoch
+INFO:root:epoch: 6:
+INFO:root:epoch mean loss: 0.12060768091396318
+INFO:root:train acc: 0.9805257755474452, val acc: 0.8105794790005315
+INFO:root:train auc: 0.9988676864735402, val auc: 0.9422496898812688
+INFO:root:train ap: 0.9989732624549811, val ap: 0.9585970075991053
+INFO:root:start 7 epoch
+INFO:root:epoch: 7:
+INFO:root:epoch mean loss: 0.11761490754943278
+INFO:root:train acc: 0.984363594890511, val acc: 0.8209728867623605
+INFO:root:train auc: 0.9979672174384124, val auc: 0.9459152932837145
+INFO:root:train ap: 0.9984898175356162, val ap: 0.9623266092819025
+INFO:root:start 8 epoch
+INFO:root:epoch: 8:
+INFO:root:epoch mean loss: 0.1177735623569865
+INFO:root:train acc: 0.9810732208029197, val acc: 0.812360446570973
+INFO:root:train auc: 0.9982090414005474, val auc: 0.9508683324472799
+INFO:root:train ap: 0.9984997913381947, val ap: 0.9649165980371787
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 5
+INFO:root:Loaded the best model at epoch 5 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.8240829346092504
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9458142831827042
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9589041558490302
+INFO:root:Test statistics: t all nodes -- ap: 0.9589041558490302
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9458142831827042
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 0.6844766139984131
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9080675172780435
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.994406897484015
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8234715576820839
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.8420990978110509
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9581176529756179
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.6335429549217224
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.8814859117490695
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9363786613523629
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8104465709728867
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.8297639865216201
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.8240829346092504
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.9968377055491393
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.6527910685805421
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6538442095928633
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 1, elapsed time: 6800.50635933876 seconds.
+INFO:root:************************************
+INFO:root:********** Run 2 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.05006421228581945
+INFO:root:train acc: 0.9918282390510949, val acc: 0.504066985645933
+INFO:root:train auc: 0.9988420249771898, val auc: 0.927940811625022
+INFO:root:train ap: 0.9988184802927188, val ap: 0.9446379801121232
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.027379295885510496
+INFO:root:train acc: 0.995757299270073, val acc: 0.6871610845295055
+INFO:root:train auc: 0.9999853872034672, val auc: 0.9466516037568669
+INFO:root:train ap: 0.9999902469625632, val ap: 0.9619439660827322
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.0716000030711451
+INFO:root:train acc: 0.9884808394160584, val acc: 0.7211855396065922
+INFO:root:train auc: 0.999916065522354, val auc: 0.9453473329789119
+INFO:root:train ap: 0.9998862197259113, val ap: 0.960042298904221
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.09440459519921138
+INFO:root:train acc: 0.985253193430657, val acc: 0.8934875066454014
+INFO:root:train auc: 0.9998310618156935, val auc: 0.9455555555555556
+INFO:root:train ap: 0.9998449916918062, val ap: 0.9602137875024306
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.1206239390528582
+INFO:root:train acc: 0.9803090784671533, val acc: 0.8263689526847423
+INFO:root:train auc: 0.9983667526802007, val auc: 0.9415576820839979
+INFO:root:train ap: 0.998690934569553, val ap: 0.9578127912485338
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 1
+INFO:root:Loaded the best model at epoch 1 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.611709197235513
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9275757575757576
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.949135957535755
+INFO:root:Test statistics: t all nodes -- ap: 0.949135957535755
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9275757575757576
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.058003306388855
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.8637293992557151
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9975162544876301
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.730701754385965
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.7693269761974814
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9483923336414046
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9769015312194824
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.8328415736310473
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9254528115259164
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.7299574694311537
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.7676859375251534
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.611709197235513
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.6035811062075761
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9489101541733121
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.715069691695187
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 2, elapsed time: 3954.0825703144073 seconds.
+INFO:root:************************************
+INFO:root:********** Run 3 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.05994526759020181
+INFO:root:train acc: 0.990636405109489, val acc: 0.511270600744285
+INFO:root:train auc: 0.9985340870209855, val auc: 0.9320060251639198
+INFO:root:train ap: 0.9984648447306913, val ap: 0.9509134614283301
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.055710646349238765
+INFO:root:train acc: 0.9919137773722628, val acc: 0.5376395534290271
+INFO:root:train auc: 0.9999561616104015, val auc: 0.944351408825093
+INFO:root:train ap: 0.9999634952796478, val ap: 0.9577027160003874
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.054059255038546264
+INFO:root:train acc: 0.9915545164233577, val acc: 0.7677033492822967
+INFO:root:train auc: 0.999994653854927, val auc: 0.9514717348927876
+INFO:root:train ap: 0.9999949427942592, val ap: 0.9649499688336292
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.08325962053077246
+INFO:root:train acc: 0.9852874087591241, val acc: 0.9004784688995214
+INFO:root:train auc: 0.9999597257071168, val auc: 0.9501550593655855
+INFO:root:train ap: 0.9999563985131869, val ap: 0.9620713874667718
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.1568376876146213
+INFO:root:train acc: 0.9746122262773723, val acc: 0.9117756512493356
+INFO:root:train auc: 0.9980507955063869, val auc: 0.94615275562644
+INFO:root:train ap: 0.9984631955091262, val ap: 0.9615281469722476
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.11835378053517666
+INFO:root:train acc: 0.9806683394160584, val acc: 0.8317384370015949
+INFO:root:train auc: 0.9975814039689781, val auc: 0.9397217791954634
+INFO:root:train ap: 0.9981819065714063, val ap: 0.9577649917327216
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 2
+INFO:root:Loaded the best model at epoch 2 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.6610845295055822
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9348839269891901
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9538613198975294
+INFO:root:Test statistics: t all nodes -- ap: 0.9538613198975294
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9348839269891901
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0230796337127686
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9438862307283359
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9955683551426017
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8945241892610314
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9112448824461991
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.953128784095443
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9502389430999756
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9145933014354067
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9317346687779583
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8900584795321637
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9070915714610415
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.6610845295055822
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.6631610954046465
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9335991493886231
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.7360479382519649
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 3, elapsed time: 4850.195268630981 seconds.
+INFO:root:************************************
+INFO:root:********** Run 4 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.0573444015563382
+INFO:root:train acc: 0.9907390510948905, val acc: 0.505077086656034
+INFO:root:train auc: 0.9983508924498176, val auc: 0.9351284777600567
+INFO:root:train ap: 0.9982916077201337, val ap: 0.9511851804814353
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.05031815799886168
+INFO:root:train acc: 0.9921076642335767, val acc: 0.5642211589580011
+INFO:root:train auc: 0.9999964359032847, val auc: 0.9414318624844942
+INFO:root:train ap: 0.9999965795855355, val ap: 0.957466957947799
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.06593156879398958
+INFO:root:train acc: 0.9905337591240876, val acc: 0.562200956937799
+INFO:root:train auc: 0.9999843179744525, val auc: 0.9412909799751905
+INFO:root:train ap: 0.9999885089769555, val ap: 0.9586449206279563
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.0911077592930959
+INFO:root:train acc: 0.9847741788321168, val acc: 0.8112174375332271
+INFO:root:train auc: 0.9997907875228103, val auc: 0.9460552897395004
+INFO:root:train ap: 0.9997851144643398, val ap: 0.9619082457847411
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.14163236718921535
+INFO:root:train acc: 0.9743499087591241, val acc: 0.8266347687400318
+INFO:root:train auc: 0.999435447080292, val auc: 0.9449388623072834
+INFO:root:train ap: 0.9993864055202912, val ap: 0.9609844740209237
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.12439626193626316
+INFO:root:train acc: 0.9789461678832116, val acc: 0.8428495481127061
+INFO:root:train auc: 0.9977703010948905, val auc: 0.9386975013290804
+INFO:root:train ap: 0.9983024059461997, val ap: 0.9571371315924325
+INFO:root:start 6 epoch
+INFO:root:epoch: 6:
+INFO:root:epoch mean loss: 0.10287719442322431
+INFO:root:train acc: 0.9823106751824817, val acc: 0.818288144603934
+INFO:root:train auc: 0.9990494554060219, val auc: 0.9443593833067517
+INFO:root:train ap: 0.9992672230575883, val ap: 0.9604789137588673
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 3
+INFO:root:Loaded the best model at epoch 3 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.7391547049441786
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9214159135211767
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9453551191673399
+INFO:root:Test statistics: t all nodes -- ap: 0.9453551191673399
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9214159135211767
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.01637864112854
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9431951089845825
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.997685542596594
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8893673577884104
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9042296290343232
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9445398453949636
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9328607320785522
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9060738968633706
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.920155111486381
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8869750132908025
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9017091569504421
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.7391547049441786
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.7559382223536107
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9181818181818182
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.7786415052357435
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 4, elapsed time: 5320.571061372757 seconds.
+prefix: CAW_cl_root
+INFO:root:Create log file at log/2023_09_01_11_43_59-enron-t-walk-1-32-172.log
+INFO:root:Command line executed: python main.py -d enron --bs 32 --n_degree 32 --n_layer 1 --mode t --bias 1e-6 --pos_enc lp --pos_dim 172 --walk_pool attn --seed 123 --n_runs 5 --gpu 0 --prefix CAW_cl_root --CL --pacing root
+INFO:root:Full args parsed:
+INFO:root:Namespace(data='enron', mode='t', n_degree=['32'], n_layer=1, bias=1e-06, agg='walk', pos_enc='lp', pos_dim=172, pos_sample='binary', walk_pool='attn', walk_n_head=2, walk_mutual=False, walk_linear_out=False, attn_agg_method='attn', attn_mode='prod', attn_n_head=2, time='time', n_epoch=50, bs=32, lr=0.0001, drop_out=0.1, tolerance=0.001, seed=123, ngh_cache=False, gpu=0, cpu_cores=1, verbosity=1, val_ratio=0.15, test_ratio=0.15, n_runs=5, neg_sample='rnd', tr_var='standard', CL=True, pacing='root', prefix='CAW_cl_root')
+INFO:root:Create checkpoint directory ./saved_checkpoints/2023_09_01_11_43_59-enron-t-walk-1-32-172/
+INFO:root:Transductive training...
+INFO:root:USING CURRICULUM LEARNING!!!
+INFO:root:************************************
+INFO:root:********** Run 0 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.05265575811276989
+INFO:root:train acc: 0.9910013686131387, val acc: 0.5496012759170653
+INFO:root:train auc: 0.9985257113937044, val auc: 0.9432961190855929
+INFO:root:train ap: 0.9985542944287288, val ap: 0.9588426794615358
+DEBUG:matplotlib.pyplot:Loaded backend agg version v2.2.
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.023081256434543073
+INFO:root:train acc: 0.9969377281021898, val acc: 0.5202286018075492
+INFO:root:train auc: 0.9999960794936131, val auc: 0.9432828282828282
+INFO:root:train ap: 0.9999962473046184, val ap: 0.9580205207358438
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.020402626199483194
+INFO:root:train acc: 0.9964587135036497, val acc: 0.5851674641148324
+INFO:root:train auc: 0.9999597257071168, val auc: 0.9539358497253234
+INFO:root:train ap: 0.9999732808711989, val ap: 0.9657440097219863
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.020799053230196506
+INFO:root:train acc: 0.9973483120437956, val acc: 0.5073896863370547
+INFO:root:train auc: 0.9997922131614964, val auc: 0.9472984228247384
+INFO:root:train ap: 0.9998349564009985, val ap: 0.9620167704504132
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.01538398228093315
+INFO:root:train acc: 0.9976676551094891, val acc: 0.7107123870281765
+INFO:root:train auc: 0.9999982179516423, val auc: 0.9498927875243665
+INFO:root:train ap: 0.9999983312004297, val ap: 0.9637109381148596
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.02159286743426635
+INFO:root:train acc: 0.9972570711678832, val acc: 0.5227272727272727
+INFO:root:train auc: 0.9999882384808394, val auc: 0.9430241006556795
+INFO:root:train ap: 0.9999917181760017, val ap: 0.9596873891515193
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 2
+INFO:root:Loaded the best model at epoch 2 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5335725677830941
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9352826510721247
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9522488631014887
+INFO:root:Test statistics: t all nodes -- ap: 0.9522488631014887
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9352826510721247
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0566531419754028
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.944736842105263
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9941356992198552
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8964380648591174
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9116703555937294
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9517094531357678
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9919501543045044
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9156034024455076
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.929919030649042
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8901648059542798
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9053938935863582
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5335725677830941
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.525266513725628
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9729930887825624
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6765491610357243
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 0, elapsed time: 4750.0352301597595 seconds.
+INFO:root:************************************
+INFO:root:********** Run 1 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.05117920299896143
+INFO:root:train acc: 0.9912480991484185, val acc: 0.5029771398192451
+INFO:root:train auc: 0.9983551107562854, val auc: 0.9050505050505051
+INFO:root:train ap: 0.9982367261493652, val ap: 0.9155955653162529
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.07882489841158939
+INFO:root:train acc: 0.9859146897810219, val acc: 0.7421850079744817
+INFO:root:train auc: 0.999771897810219, val auc: 0.9431702994860889
+INFO:root:train ap: 0.9997532514220657, val ap: 0.9585161371769186
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.08568345488877803
+INFO:root:train acc: 0.9845403740875912, val acc: 0.8901648059542798
+INFO:root:train auc: 0.9995102931113139, val auc: 0.9471380471380473
+INFO:root:train ap: 0.9996408760667688, val ap: 0.9627912977622415
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.09579087237035112
+INFO:root:train acc: 0.9839130930656934, val acc: 0.9032429558745348
+INFO:root:train auc: 0.9998731181569344, val auc: 0.9430072656388446
+INFO:root:train ap: 0.9998617434027316, val ap: 0.9599474706091751
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.12426780997002425
+INFO:root:train acc: 0.9809876824817518, val acc: 0.8630249867091973
+INFO:root:train auc: 0.9974003478558394, val auc: 0.9383218146376041
+INFO:root:train ap: 0.9980026929596636, val ap: 0.9569608613759718
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.11433320205009785
+INFO:root:train acc: 0.9808907390510949, val acc: 0.8603668261562999
+INFO:root:train auc: 0.9976241731295621, val auc: 0.9524313308523834
+INFO:root:train ap: 0.9982167782853488, val ap: 0.9665738164973808
+INFO:root:start 6 epoch
+INFO:root:epoch: 6:
+INFO:root:epoch mean loss: 0.10858045282852755
+INFO:root:train acc: 0.9819742244525548, val acc: 0.8274322169059012
+INFO:root:train auc: 0.9995432610059306, val auc: 0.945337586390218
+INFO:root:train ap: 0.9995999581059072, val ap: 0.9619505552962394
+INFO:root:start 7 epoch
+INFO:root:epoch: 7:
+INFO:root:epoch mean loss: 0.10421332917345683
+INFO:root:train acc: 0.9819685218978103, val acc: 0.8633971291866029
+INFO:root:train auc: 0.9981812414461679, val auc: 0.9476785397838028
+INFO:root:train ap: 0.9986577544762888, val ap: 0.9638730936773713
+INFO:root:start 8 epoch
+INFO:root:epoch: 8:
+INFO:root:epoch mean loss: 0.11001879655039518
+INFO:root:train acc: 0.9815670620437956, val acc: 0.8683147262094632
+INFO:root:train auc: 0.9985173357664233, val auc: 0.954696083643452
+INFO:root:train ap: 0.9988993974931106, val ap: 0.9682602763364413
+INFO:root:start 9 epoch
+INFO:root:epoch: 9:
+INFO:root:epoch mean loss: 0.09857524414871563
+INFO:root:train acc: 0.9845973996350365, val acc: 0.8329346092503987
+INFO:root:train auc: 0.9985080691149635, val auc: 0.9367836257309942
+INFO:root:train ap: 0.9988164695169012, val ap: 0.9558424637811475
+INFO:root:start 10 epoch
+INFO:root:epoch: 10:
+INFO:root:epoch mean loss: 0.09831937656837683
+INFO:root:train acc: 0.9824361313868614, val acc: 0.8067783094098884
+INFO:root:train auc: 0.9988887146441606, val auc: 0.9536700336700337
+INFO:root:train ap: 0.9991198952963531, val ap: 0.9682688155703175
+INFO:root:start 11 epoch
+INFO:root:epoch: 11:
+INFO:root:epoch mean loss: 0.0969413560642783
+INFO:root:train acc: 0.9827611770072993, val acc: 0.8884370015948962
+INFO:root:train auc: 0.9991581603558394, val auc: 0.9477644869750133
+INFO:root:train ap: 0.9993261211164138, val ap: 0.9639976308599406
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 8
+INFO:root:Loaded the best model at epoch 8 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.8664274322169059
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9249100655679604
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9469884906060367
+INFO:root:Test statistics: t all nodes -- ap: 0.9469884906060367
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9249100655679604
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 0.8003448247909546
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.944949494949495
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9976499798336442
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8933014354066984
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9081216870812143
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9462778525826828
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.7255544066429138
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9098351940457204
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9203766096929373
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8900318979266347
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9048540945625186
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.8664274322169059
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.9837539474716492
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.7598617756512493
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.7528460609002096
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 1, elapsed time: 9140.088332176208 seconds.
+INFO:root:************************************
+INFO:root:********** Run 2 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.06710227456079855
+INFO:root:train acc: 0.9888237530413625, val acc: 0.5066454013822436
+INFO:root:train auc: 0.9979032419023722, val auc: 0.9405759347864613
+INFO:root:train ap: 0.9978930174323903, val ap: 0.9579465428834995
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.07316014694522217
+INFO:root:train acc: 0.9878934762773722, val acc: 0.5087187666135035
+INFO:root:train auc: 0.9999116104014598, val auc: 0.957618288144604
+INFO:root:train ap: 0.9999255730387943, val ap: 0.9678930751561278
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.099107429420682
+INFO:root:train acc: 0.9826642335766423, val acc: 0.6370281765018606
+INFO:root:train auc: 0.999913036040146, val auc: 0.9415594541910332
+INFO:root:train ap: 0.9999243836785423, val ap: 0.9594798182967702
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.11888554128869928
+INFO:root:train acc: 0.9796532846715329, val acc: 0.8998936735778841
+INFO:root:train auc: 0.9998061131386862, val auc: 0.9446889952153109
+INFO:root:train ap: 0.9997587954623546, val ap: 0.9603252264565351
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.09319078497895673
+INFO:root:train acc: 0.9847285583941606, val acc: 0.9167995746943114
+INFO:root:train auc: 0.9991243014370438, val auc: 0.9475757575757575
+INFO:root:train ap: 0.9992861903329104, val ap: 0.9633477831529188
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 1
+INFO:root:Loaded the best model at epoch 1 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5010233918128655
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9391874889243311
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9550745448596215
+INFO:root:Test statistics: t all nodes -- ap: 0.9550745448596215
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9391874889243311
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0572454929351807
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.893341307814992
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9947800606164807
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.7905635300372142
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.8400457117235017
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9537766492899785
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9984670281410217
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.8643141945773524
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9302824758968326
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.7792929292929293
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.8281362973656724
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5010233918128655
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.49938569055123444
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9804891015417331
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6601697977255696
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 2, elapsed time: 3910.8608105182648 seconds.
+INFO:root:************************************
+INFO:root:********** Run 3 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.08236571038568423
+INFO:root:train acc: 0.9856352645985401, val acc: 0.5511961722488038
+INFO:root:train auc: 0.9962281164461679, val auc: 0.9482872585504164
+INFO:root:train ap: 0.996039442045266, val ap: 0.9621342688203147
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.0823422974086237
+INFO:root:train acc: 0.9873460310218978, val acc: 0.8200159489633173
+INFO:root:train auc: 0.9998071823677007, val auc: 0.9515435052277157
+INFO:root:train ap: 0.9998419020587885, val ap: 0.9642698942182039
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.11793673661674775
+INFO:root:train acc: 0.9821224908759124, val acc: 0.908133971291866
+INFO:root:train auc: 0.9990512374543795, val auc: 0.9382996632996633
+INFO:root:train ap: 0.9991722090407378, val ap: 0.9539357808063086
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.10736125438608486
+INFO:root:train acc: 0.9810104927007299, val acc: 0.9222753854332801
+INFO:root:train auc: 0.999674241560219, val auc: 0.9457309941520469
+INFO:root:train ap: 0.9996837919949311, val ap: 0.9621997417828156
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.08865502248257116
+INFO:root:train acc: 0.9856409671532846, val acc: 0.9322700691121744
+INFO:root:train auc: 0.9997754619069343, val auc: 0.9514885699096226
+INFO:root:train ap: 0.9997887332520441, val ap: 0.9662797849807928
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.13028896015737032
+INFO:root:train acc: 0.9785127737226277, val acc: 0.9232589048378523
+INFO:root:train auc: 0.9984872191491788, val auc: 0.9489562289562289
+INFO:root:train ap: 0.9989261901840838, val ap: 0.9644148766253015
+INFO:root:start 6 epoch
+INFO:root:epoch: 6:
+INFO:root:epoch mean loss: 0.12990703345661642
+INFO:root:train acc: 0.979795848540146, val acc: 0.8498405103668261
+INFO:root:train auc: 0.9968001539689781, val auc: 0.9468669147616515
+INFO:root:train ap: 0.9976180051393921, val ap: 0.9634790837606068
+INFO:root:start 7 epoch
+INFO:root:epoch: 7:
+INFO:root:epoch mean loss: 0.13246816818725188
+INFO:root:train acc: 0.9811245437956204, val acc: 0.81839447102605
+INFO:root:train auc: 0.997604392392792, val auc: 0.94745879851143
+INFO:root:train ap: 0.9981640212638813, val ap: 0.963805216146559
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 4
+INFO:root:Loaded the best model at epoch 4 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.8807549175970228
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9284582668793195
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9500917588108334
+INFO:root:Test statistics: t all nodes -- ap: 0.9500917588108334
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9284582668793195
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 0.9481490254402161
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9414008506113767
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9979593054168209
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8848219032429558
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9023211242484548
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9494135670721985
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.8753867745399475
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9077751196172248
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9268006041145788
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.883599149388623
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9005966459631177
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.8807549175970228
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.9347053210938486
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.8727272727272728
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.8396039792360259
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 3, elapsed time: 6376.192138195038 seconds.
+INFO:root:************************************
+INFO:root:********** Run 4 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.036267723932812856
+INFO:root:train acc: 0.9934705748175182, val acc: 0.5134768740031898
+INFO:root:train auc: 0.9985119896213503, val auc: 0.953203969519759
+INFO:root:train ap: 0.9984061095930222, val ap: 0.9658590603153722
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.08540350063644087
+INFO:root:train acc: 0.9865298053527981, val acc: 0.782775119617225
+INFO:root:train auc: 0.9998863053147811, val auc: 0.9381587807903596
+INFO:root:train ap: 0.9998562065803788, val ap: 0.9522868374594572
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.09041208099172271
+INFO:root:train acc: 0.9859880626520682, val acc: 0.8765018607123869
+INFO:root:train auc: 0.9996646184990876, val auc: 0.9460588339535708
+INFO:root:train ap: 0.9997297349153776, val ap: 0.9622932917777577
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.11277288236875073
+INFO:root:train acc: 0.9813811587591241, val acc: 0.917410951621478
+INFO:root:train auc: 0.9993787779425183, val auc: 0.9431348573453836
+INFO:root:train ap: 0.9994589406649801, val ap: 0.9590777570020423
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 0
+INFO:root:Loaded the best model at epoch 0 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5027644869750133
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9352259436469961
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9515016631769192
+INFO:root:Test statistics: t all nodes -- ap: 0.9515016631769192
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9352259436469961
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0430123805999756
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9199627857522593
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9832338433288416
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8639553429027114
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.8862249556283488
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9508420150988358
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9995917081832886
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.8972620946305155
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9368376818385247
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.850026581605529
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.8744837547931893
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5027644869750133
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.5020566816501945
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9872939925571504
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6641120374099223
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 4, elapsed time: 3217.8260185718536 seconds.
+prefix: CAW_cl_geometric
+INFO:root:Create log file at log/2023_09_01_19_20_39-enron-t-walk-1-32-172.log
+INFO:root:Command line executed: python main.py -d enron --bs 32 --n_degree 32 --n_layer 1 --mode t --bias 1e-6 --pos_enc lp --pos_dim 172 --walk_pool attn --seed 123 --n_runs 5 --gpu 0 --prefix CAW_cl_geometric --CL --pacing geometric
+INFO:root:Full args parsed:
+INFO:root:Namespace(data='enron', mode='t', n_degree=['32'], n_layer=1, bias=1e-06, agg='walk', pos_enc='lp', pos_dim=172, pos_sample='binary', walk_pool='attn', walk_n_head=2, walk_mutual=False, walk_linear_out=False, attn_agg_method='attn', attn_mode='prod', attn_n_head=2, time='time', n_epoch=50, bs=32, lr=0.0001, drop_out=0.1, tolerance=0.001, seed=123, ngh_cache=False, gpu=0, cpu_cores=1, verbosity=1, val_ratio=0.15, test_ratio=0.15, n_runs=5, neg_sample='rnd', tr_var='standard', CL=True, pacing='geometric', prefix='CAW_cl_geometric')
+INFO:root:Create checkpoint directory ./saved_checkpoints/2023_09_01_19_20_39-enron-t-walk-1-32-172/
+INFO:root:Transductive training...
+INFO:root:USING CURRICULUM LEARNING!!!
+INFO:root:************************************
+INFO:root:********** Run 0 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.05265575811276989
+INFO:root:train acc: 0.9910013686131387, val acc: 0.5496012759170653
+INFO:root:train auc: 0.9985257113937044, val auc: 0.9432961190855929
+INFO:root:train ap: 0.9985542944287288, val ap: 0.9588426794615358
+DEBUG:matplotlib.pyplot:Loaded backend agg version v2.2.
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.023081256434543073
+INFO:root:train acc: 0.9969377281021898, val acc: 0.5202286018075492
+INFO:root:train auc: 0.9999960794936131, val auc: 0.9432828282828282
+INFO:root:train ap: 0.9999962473046184, val ap: 0.9580205207358438
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.020402626199483194
+INFO:root:train acc: 0.9964587135036497, val acc: 0.5851674641148324
+INFO:root:train auc: 0.9999597257071168, val auc: 0.9539358497253234
+INFO:root:train ap: 0.9999732808711989, val ap: 0.9657440097219863
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.020799053230196506
+INFO:root:train acc: 0.9973483120437956, val acc: 0.5073896863370547
+INFO:root:train auc: 0.9997922131614964, val auc: 0.9472984228247384
+INFO:root:train ap: 0.9998349564009985, val ap: 0.9620167704504132
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.01538398228093315
+INFO:root:train acc: 0.9976676551094891, val acc: 0.7107123870281765
+INFO:root:train auc: 0.9999982179516423, val auc: 0.9498927875243665
+INFO:root:train ap: 0.9999983312004297, val ap: 0.9637109381148596
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.02159286743426635
+INFO:root:train acc: 0.9972570711678832, val acc: 0.5227272727272727
+INFO:root:train auc: 0.9999882384808394, val auc: 0.9430241006556795
+INFO:root:train ap: 0.9999917181760017, val ap: 0.9596873891515193
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 2
+INFO:root:Loaded the best model at epoch 2 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5335725677830941
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9352826510721247
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9522488631014887
+INFO:root:Test statistics: t all nodes -- ap: 0.9522488631014887
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9352826510721247
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0566531419754028
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.944736842105263
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9941356992198552
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.8964380648591174
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9116703555937294
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9517094531357678
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9919501543045044
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9156034024455076
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.929919030649042
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8901648059542798
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9053938935863582
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5335725677830941
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.525266513725628
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9729930887825624
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6765491610357243
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 0, elapsed time: 4519.854561328888 seconds.
+INFO:root:************************************
+INFO:root:********** Run 1 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.05117920299896143
+INFO:root:train acc: 0.9912480991484185, val acc: 0.5029771398192451
+INFO:root:train auc: 0.9983551107562854, val auc: 0.9050505050505051
+INFO:root:train ap: 0.9982367261493652, val ap: 0.9155955653162529
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.03938379837918801
+INFO:root:train acc: 0.994097855839416, val acc: 0.5451887293992557
+INFO:root:train auc: 0.9999877038663321, val auc: 0.9443744462165514
+INFO:root:train ap: 0.9999879817890834, val ap: 0.9544691799182099
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.023087124047155076
+INFO:root:train acc: 0.9967039233576642, val acc: 0.834848484848485
+INFO:root:train auc: 0.9999800410583941, val auc: 0.9462830054935318
+INFO:root:train ap: 0.9999783626949312, val ap: 0.9608884492641331
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.031389536116888286
+INFO:root:train acc: 0.9947878649635037, val acc: 0.7320308346624136
+INFO:root:train auc: 0.9999992871806569, val auc: 0.94399698741804
+INFO:root:train ap: 0.99999929798095, val ap: 0.9602851551741434
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.06660785950982777
+INFO:root:train acc: 0.9890339872262773, val acc: 0.858107389686337
+INFO:root:train auc: 0.9999843179744525, val auc: 0.9477246145667199
+INFO:root:train ap: 0.9999864737805166, val ap: 0.960438749480921
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.24143032400746328
+INFO:root:train acc: 0.9592267335766423, val acc: 0.8616427432216905
+INFO:root:train auc: 0.9934588132983576, val auc: 0.940194931773879
+INFO:root:train ap: 0.9947535511886901, val ap: 0.9584261127287339
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 2
+INFO:root:Loaded the best model at epoch 2 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.7491228070175439
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9397093744462164
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9564614289059781
+INFO:root:Test statistics: t all nodes -- ap: 0.9564614289059781
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9397093744462164
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.024492859840393
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9514354066985645
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9976667165667771
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.9050505050505049
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9204319135573692
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9556539905917933
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9521313905715942
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9226608187134505
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9341863832528466
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8988304093567251
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9136378754340985
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.7491228070175439
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.7426289562059419
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9354598617756512
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.7936299334340959
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 1, elapsed time: 4555.295748710632 seconds.
+INFO:root:************************************
+INFO:root:********** Run 2 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.07486278204858085
+INFO:root:train acc: 0.9877623175182482, val acc: 0.5132908027644869
+INFO:root:train auc: 0.9973452825615876, val auc: 0.9486585149743044
+INFO:root:train ap: 0.9973385734859719, val ap: 0.963213686181355
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.026068778799601684
+INFO:root:train acc: 0.9960994525547445, val acc: 0.5044125465178096
+INFO:root:train auc: 0.9999982179516423, val auc: 0.9455963140173667
+INFO:root:train ap: 0.999998458768988, val ap: 0.959118231576155
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.031325730261772565
+INFO:root:train acc: 0.9954790145985402, val acc: 0.5251727804359383
+INFO:root:train auc: 1.0, val auc: 0.9398538011695907
+INFO:root:train ap: 1.0, val ap: 0.9539206543139285
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.03870076956229031
+INFO:root:train acc: 0.9935903284671533, val acc: 0.6093301435406698
+INFO:root:train auc: 0.9999868128421533, val auc: 0.9463521176679073
+INFO:root:train ap: 0.999991216315905, val ap: 0.9621011941437961
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 0
+INFO:root:Loaded the best model at epoch 0 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5049308878256247
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9335132021974127
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9511871155829931
+INFO:root:Test statistics: t all nodes -- ap: 0.9511871155829931
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9335132021974127
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0508977174758911
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9446703880914408
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9890173338802115
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.903056884635832
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9181603647759147
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9504024174471105
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9998019933700562
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9197368421052631
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9295663778845985
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8993354598617757
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.9125063754494681
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5049308878256247
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.50451663401263
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9945773524720893
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6682577514936704
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 2, elapsed time: 2927.893585205078 seconds.
+INFO:root:************************************
+INFO:root:********** Run 3 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.0658503516999169
+INFO:root:train acc: 0.9892449817518248, val acc: 0.5169324827219565
+INFO:root:train auc: 0.9965160954607665, val auc: 0.9405236576289209
+INFO:root:train ap: 0.9964755521861841, val ap: 0.9579927570908947
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.03828613011613038
+INFO:root:train acc: 0.9943259580291971, val acc: 0.5209463051568315
+INFO:root:train auc: 0.9999308565237226, val auc: 0.9526599326599327
+INFO:root:train ap: 0.9998926872540522, val ap: 0.9636770448640971
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.0355099736142971
+INFO:root:train acc: 0.9954683698296836, val acc: 0.6416267942583732
+INFO:root:train auc: 0.9999468949589416, val auc: 0.9446730462519936
+INFO:root:train ap: 0.9999335299764123, val ap: 0.9595207628325867
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.05236780205832478
+INFO:root:train acc: 0.9945540602189781, val acc: 0.5465178096757044
+INFO:root:train auc: 0.9993848369069344, val auc: 0.9473675349991139
+INFO:root:train ap: 0.9994217995136317, val ap: 0.9620902677415624
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.07509066932565238
+INFO:root:train acc: 0.9897753193430657, val acc: 0.9104465709728868
+INFO:root:train auc: 0.9996870723083942, val auc: 0.9392752082225766
+INFO:root:train ap: 0.9997466924032717, val ap: 0.9570216836252976
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 1
+INFO:root:Loaded the best model at epoch 1 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.5022594364699627
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.9282128300549353
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9447433083279657
+INFO:root:Test statistics: t all nodes -- ap: 0.9447433083279657
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.9282128300549353
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0665369033813477
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.9419590643274852
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9932481332659083
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.890776182881446
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.9064217336558081
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9436079135251018
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9991466999053955
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.9068979266347688
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.9154651601712747
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.8747740563530038
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.8894821876755886
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.5022594364699627
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.5011776642516247
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9884635832004253
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.6641617657437447
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 3, elapsed time: 4040.923973798752 seconds.
+INFO:root:************************************
+INFO:root:********** Run 4 starts. **********
+INFO:module:neighbors: [32], node dim: 400, edge dim: 400, pos dim: 172, time dim: 172
+INFO:module:Using time encoding
+INFO:module:Distance encoding: lp
+INFO:module:bi-lstm actual encoding dim: 1144 + 172, attention dim: 572, attention heads: 2
+INFO:root:num of training instances: 87664
+INFO:root:num of batches per epoch: 2740
+INFO:root:start 0 epoch
+INFO:root:epoch: 0:
+INFO:root:epoch mean loss: 0.050301825327128666
+INFO:root:train acc: 0.9904425182481752, val acc: 0.5129186602870813
+INFO:root:train auc: 0.9979356751824817, val auc: 0.9454775828460039
+INFO:root:train ap: 0.9979182441851006, val ap: 0.9571291679146969
+INFO:root:start 1 epoch
+INFO:root:epoch: 1:
+INFO:root:epoch mean loss: 0.03614316485916348
+INFO:root:train acc: 0.9951186131386861, val acc: 0.5853003721424774
+INFO:root:train auc: 0.9999964359032847, val auc: 0.9376687931951089
+INFO:root:train ap: 0.9999972844977407, val ap: 0.9485568625719905
+INFO:root:start 2 epoch
+INFO:root:epoch: 2:
+INFO:root:epoch mean loss: 0.03437574217161677
+INFO:root:train acc: 0.9946453010948905, val acc: 0.5727804359383306
+INFO:root:train auc: 0.9999896641195255, val auc: 0.945699096225412
+INFO:root:train ap: 0.999989654989602, val ap: 0.9611968535948124
+INFO:root:start 3 epoch
+INFO:root:epoch: 3:
+INFO:root:epoch mean loss: 0.02336576545158532
+INFO:root:train acc: 0.9960994525547445, val acc: 0.6794790005316321
+INFO:root:train auc: 0.9999982179516423, val auc: 0.9442078681552365
+INFO:root:train ap: 0.999998458768988, val ap: 0.9588959143870615
+INFO:root:start 4 epoch
+INFO:root:epoch: 4:
+INFO:root:epoch mean loss: 0.057880408253908784
+INFO:root:train acc: 0.989627052919708, val acc: 0.8685805422647527
+INFO:root:train auc: 0.9999996435903284, val auc: 0.9497208931419456
+INFO:root:train ap: 0.9999996543906216, val ap: 0.964742180273085
+INFO:root:start 5 epoch
+INFO:root:epoch: 5:
+INFO:root:epoch mean loss: 0.19677661139762045
+INFO:root:train acc: 0.968869753649635, val acc: 0.9220361509835192
+INFO:root:train auc: 0.9951578182025548, val auc: 0.9480967570441255
+INFO:root:train ap: 0.9962960826734985, val ap: 0.9639501944029355
+INFO:root:start 6 epoch
+INFO:root:epoch: 6:
+INFO:root:epoch mean loss: 0.09620931570057724
+INFO:root:train acc: 0.9833428375912409, val acc: 0.7619617224880383
+INFO:root:train auc: 0.999945112910584, val auc: 0.9371415913521176
+INFO:root:train ap: 0.9999405835590938, val ap: 0.9550213821047201
+INFO:root:start 7 epoch
+INFO:root:epoch: 7:
+INFO:root:epoch mean loss: 0.11312731129844149
+INFO:root:train acc: 0.9817746350364963, val acc: 0.8198830409356724
+INFO:root:train auc: 0.9975411296760949, val auc: 0.941096934254829
+INFO:root:train ap: 0.9981427161333789, val ap: 0.9576063512343761
+INFO:root:No improvment over 3 epochs, stop training
+INFO:root:Loading the best model at epoch 4
+INFO:root:Loaded the best model at epoch 4 for inference
+INFO:root:Test statistics: t all nodes -- acc_inherent: 0.7840776182881446
+INFO:root:Test statistics: t all nodes -- auc_inherent: 0.914913166755272
+INFO:root:Test statistics: t all nodes -- ap_inherent: 0.9403382160516175
+INFO:root:Test statistics: t all nodes -- ap: 0.9403382160516175
+INFO:root:Test statistics: t all nodes -- au_roc_score: 0.914913166755272
+INFO:root:Test statistics: t all nodes -- opt_thr_au_roc: 1.0153392553329468
+INFO:root:Test statistics: t all nodes -- acc_auroc_opt_thr: 0.8928761297182348
+INFO:root:Test statistics: t all nodes -- prec_auroc_opt_thr: 0.9962598558565149
+INFO:root:Test statistics: t all nodes -- rec_auroc_opt_thr: 0.791866028708134
+INFO:root:Test statistics: t all nodes -- f1_auroc_opt_thr: 0.8184333265719963
+INFO:root:Test statistics: t all nodes -- au_pr_score: 0.9394393836983604
+INFO:root:Test statistics: t all nodes -- opt_thr_au_pr: 0.9308083057403564
+INFO:root:Test statistics: t all nodes -- acc_aupr_opt_thr: 0.8547846889952154
+INFO:root:Test statistics: t all nodes -- prec_aupr_opt_thr: 0.914780835127252
+INFO:root:Test statistics: t all nodes -- rec_aupr_opt_thr: 0.7874534821903243
+INFO:root:Test statistics: t all nodes -- f1_aupr_opt_thr: 0.8144493560559541
+INFO:root:Test statistics: t all nodes -- acc_thr_0.5: 0.7840776182881446
+INFO:root:Test statistics: t all nodes -- prec_thr_0.5: 0.8109002043069828
+INFO:root:Test statistics: t all nodes -- rec_thr_0.5: 0.9106858054226475
+INFO:root:Test statistics: t all nodes -- f1_thr_0.5: 0.8038692294151041
+INFO:root:Saving CAWN model ...
+INFO:root:CAWN model saved
+INFO:root:Run 4, elapsed time: 6279.537521600723 seconds.
+****************************************************************************************************************
+Total elapsed time:
+Start Time: 22:33:14
+End Time: 01:32:45
+****************************************************************************************************************
