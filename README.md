@@ -47,10 +47,12 @@ python preprocess_data.py --data wikipedia
 
 
 ### Model Training&Testing
+Just running the script
+```{bash}
 train.sh
 
 test.sh
-
+```
 
 
 ### Acknowledgment
